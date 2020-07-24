@@ -88,7 +88,7 @@ namespace Bakery.Tests
       Order newOrder1 = new Order(name1);
       Order newOrder2 = new Order(name2);
       Order result = Order.Find(2);
-      Assert.AreEqual(newOrder1, result);
+      Assert.AreEqual(newOrder2, result);
     }
   }
 }
