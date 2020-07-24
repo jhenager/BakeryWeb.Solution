@@ -101,7 +101,7 @@ namespace Bakery.Tests
       List<Order> newList = new List<Order> { newOrder };
       string name = "Joe";
       Vendor newVendor = new Vendor(name);
-      // newVendor.AddOrder(newOrder);
+      newVendor.AddOrder(newOrder);
       List<Order> result = newVendor.Orders;
       CollectionAssert.AreEqual(newList, result);
     }
