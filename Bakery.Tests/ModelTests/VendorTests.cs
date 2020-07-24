@@ -81,6 +81,7 @@ namespace Bakery.Tests
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
     }
+
     [TestMethod]
     public void Find_ReturnsCorrectVendor_Vendor()
     {
@@ -90,6 +91,19 @@ namespace Bakery.Tests
       Vendor newVendor2 = new Vendor(name2);
       Vendor result = Vendor.Find(2);
       Assert.AreEqual(newVendor2, result);
+    }
+
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      string description = "Bread.";
+      Order newOrder = new Order(description);
+      List<Order> newList = new List<Order> { newOrder };
+      string name = "Joe";
+      Vendor newVendor = new Vendor(name);
+      // newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
