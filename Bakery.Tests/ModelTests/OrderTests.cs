@@ -6,8 +6,13 @@ using System;
 namespace Bakery.Tests
 {
   [TestClass]
-  public class OrderTest
+  public class OrderTest : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -32,6 +37,19 @@ namespace Bakery.Tests
       newOrder.OrderName = secondOrder;
       string result = newOrder.OrderName;
       Assert.AreEqual(secondOrder, result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> newOrder = new List<Order> {};
+      List<Order> result = Order.GetAll();
+
+      foreach (Order thisOrder in result)
+      {
+        Console.WriteLine(thisOrder.OrderName);
+      }
+
+      CollectionAssert.AreEqual(newOrder, result);
     }
   }
 }
