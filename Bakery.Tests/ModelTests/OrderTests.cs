@@ -22,5 +22,16 @@ namespace Bakery.Tests
       string result = newOrder.OrderName;
       Assert.AreEqual(orderName, result);
     }
+
+    [TestMethod]
+    public void SetOrderName_SetOrderName_String()
+    {
+      string orderName = "Pastry";
+      Order newOrder = new Order(orderName);
+      string secondOrder = "Bread";
+      newOrder.OrderName = secondOrder;
+      string result = newOrder.OrderName;
+      Assert.AreEqual(orderName, result);
+    }
   }
 }
