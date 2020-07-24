@@ -72,5 +72,14 @@ namespace Bakery.Tests
 
       CollectionAssert.AreEqual(vendorList, result);
     }
+
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string name = "Test Vendor";
+      Vendor newVendor = new Vendor(name);
+      int result = newVendor.Id;
+      Assert.AreEqual(0, result);
+    }
   }
 }
