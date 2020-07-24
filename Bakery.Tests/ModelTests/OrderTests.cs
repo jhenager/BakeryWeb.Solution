@@ -79,5 +79,16 @@ namespace Bakery.Tests
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string name1 = "Bread";
+      string name2 = "Dough";
+      Order newOrder1 = new Order(name1);
+      Order newOrder2 = new Order(name2);
+      Order result = Order.Find(2);
+      Assert.AreEqual(newOrder1, result);
+    }
   }
 }
