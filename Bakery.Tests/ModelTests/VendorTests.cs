@@ -33,7 +33,7 @@ namespace Bakery.Tests
       string secondVendor = "Bill";
       newVendor.VendorName = secondVendor;
       string result = newVendor.VendorName;
-      Assert.AreEqual("Pierre", result);
+      Assert.AreEqual(secondVendor, result);
     }
   }
 }
