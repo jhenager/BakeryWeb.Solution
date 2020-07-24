@@ -70,5 +70,14 @@ namespace Bakery.Tests
 
       CollectionAssert.AreEqual(OrderList, result);
     }
+
+    [TestMethod]
+    public void GetId_ReturnsOrderId_Int()
+    {
+      string name = "Test Order";
+      Order newOrder = new Order(name);
+      int result = newOrder.Id;
+      Assert.AreEqual(0, result);
+    }
   }
 }
