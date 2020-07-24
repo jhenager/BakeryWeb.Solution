@@ -20,7 +20,7 @@ namespace Bakery.Tests
       string orderName = "Bread";
       Order newOrder = new Order(orderName);
       string result = newOrder.OrderName;
-      Assert.AreEqual("Croissant", result);
+      Assert.AreEqual(orderName, result);
     }
   }
 }
