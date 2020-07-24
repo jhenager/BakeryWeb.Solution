@@ -51,5 +51,24 @@ namespace Bakery.Tests
 
       CollectionAssert.AreEqual(newOrder, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsOrder_OrderList()
+    {
+      string order1 = "Joey";
+      string order2 = "Don";
+      Order newOrder1 = new Order(order1);
+      Order newOrder2 = new Order(order2);
+      List<Order> OrderList = new List<Order> { newOrder1, newOrder2 };
+
+      List<Order> result = Order.GetAll();
+
+      foreach (Order thisOrder in result)
+      {
+        Console.WriteLine(thisOrder.OrderName);
+      }
+
+      CollectionAssert.AreEqual(OrderList, result);
+    }
   }
 }
