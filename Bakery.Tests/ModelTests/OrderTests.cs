@@ -31,7 +31,7 @@ namespace Bakery.Tests
       string secondOrder = "Bread";
       newOrder.OrderName = secondOrder;
       string result = newOrder.OrderName;
-      Assert.AreEqual(orderName, result);
+      Assert.AreEqual(secondOrder, result);
     }
   }
 }
