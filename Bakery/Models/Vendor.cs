@@ -14,5 +14,10 @@ namespace Bakery.Models
       _instances.Add(this);
       Id = _instances.Count;
     }
+
+    public static List<Vendor> GetAll()
+    {
+      return _instances;
+    }
   }
 }
