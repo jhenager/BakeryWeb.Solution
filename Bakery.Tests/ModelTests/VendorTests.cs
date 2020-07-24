@@ -88,7 +88,7 @@ namespace Bakery.Tests
       string name2 = "Bill";
       Vendor newVendor1 = new Vendor(name1);
       Vendor newVendor2 = new Vendor(name2);
-      Vendor result = Vendor.Find(1);
+      Vendor result = Vendor.Find(2);
       Assert.AreEqual(newVendor2, result);
     }
   }
