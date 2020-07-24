@@ -14,5 +14,13 @@ namespace Bakery.Tests
       Order newOrder = new Order("test");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+    [TestMethod]
+    public void GetOrderName_ResturnsOrderName_String()
+    {
+      string orderName = "Bread";
+      Order newOrder = new Order(orderName);
+      string result = newOrder.OrderName;
+      Assert.AreEqual("Croissant", result);
+    }
   }
 }
