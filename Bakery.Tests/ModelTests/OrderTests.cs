@@ -77,7 +77,7 @@ namespace Bakery.Tests
       string name = "Test Order";
       Order newOrder = new Order(name);
       int result = newOrder.Id;
-      Assert.AreEqual(0, result);
+      Assert.AreEqual(1, result);
     }
   }
 }
