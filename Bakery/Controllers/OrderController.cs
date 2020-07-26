@@ -23,5 +23,12 @@ namespace Bakery.Controllers
       model.Add("vendor", vendor);
       return View(model);
     }
+
+    [HttpPost("/order/delete")]
+    public ActionResult DeleteAll()
+    {
+      Order.ClearAll();
+      return View();
+    }
   }
 }
