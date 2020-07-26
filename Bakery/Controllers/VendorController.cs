@@ -41,11 +41,11 @@ namespace Bakery.Controllers
     public ActionResult Create(int vendorId, string orderName, string artist)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor foundVendor = vendor.Find(vendorId);
-      Order newOrder = new Order(orderName, artist);
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderName);
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
-      model.Add("Orders", vendorOrders);
+      model.Add("orders", vendorOrders);
       model.Add("vendor", foundVendor);
       return View("Show", model);
     }
