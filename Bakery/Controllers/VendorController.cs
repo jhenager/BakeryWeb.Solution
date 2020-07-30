@@ -37,8 +37,10 @@ namespace Bakery.Controllers
       return RedirectToAction("Index");
     }
 
+  
+    
     [HttpPost("/vendors/{vendorsId}/orders")]
-    public ActionResult Create(int vendorId, string orderName, string artist)
+    public ActionResult Create(int vendorId, string orderName)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
