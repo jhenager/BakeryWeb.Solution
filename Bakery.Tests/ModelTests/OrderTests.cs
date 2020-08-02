@@ -16,14 +16,14 @@ namespace Bakery.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test");
+      Order newOrder = new Order("test", "d", 5, "a");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
     [TestMethod]
     public void GetOrderName_ResturnsOrderName_String()
     {
       string orderName = "Bread";
-      Order newOrder = new Order(orderName);
+      Order newOrder = new Order(orderName, "d", 5, "a");
       string result = newOrder.OrderName;
       Assert.AreEqual(orderName, result);
     }
@@ -32,7 +32,7 @@ namespace Bakery.Tests
     public void SetOrderName_SetOrderName_String()
     {
       string orderName = "Pastry";
-      Order newOrder = new Order(orderName);
+      Order newOrder = new Order(orderName, "d", 5, "a");
       string secondOrder = "Bread";
       newOrder.OrderName = secondOrder;
       string result = newOrder.OrderName;
@@ -57,8 +57,8 @@ namespace Bakery.Tests
     {
       string order1 = "Joey";
       string order2 = "Don";
-      Order newOrder1 = new Order(order1);
-      Order newOrder2 = new Order(order2);
+      Order newOrder1 = new Order(order1, "d", 5, "a");
+      Order newOrder2 = new Order(order2, "d", 5, "a");
       List<Order> OrderList = new List<Order> { newOrder1, newOrder2 };
 
       List<Order> result = Order.GetAll();
@@ -75,7 +75,7 @@ namespace Bakery.Tests
     public void GetId_ReturnsOrderId_Int()
     {
       string name = "Test Order";
-      Order newOrder = new Order(name);
+      Order newOrder = new Order(name, "d", 5, "a");
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
     }
@@ -85,8 +85,8 @@ namespace Bakery.Tests
     {
       string name1 = "Bread";
       string name2 = "Dough";
-      Order newOrder1 = new Order(name1);
-      Order newOrder2 = new Order(name2);
+      Order newOrder1 = new Order(name1, "d", 5, "a");
+      Order newOrder2 = new Order(name2, "d", 5, "a");
       Order result = Order.Find(2);
       Assert.AreEqual(newOrder2, result);
     }

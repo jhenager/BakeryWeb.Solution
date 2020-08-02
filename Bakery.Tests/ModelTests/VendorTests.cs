@@ -97,7 +97,7 @@ namespace Bakery.Tests
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
       string description = "Bread.";
-      Order newOrder = new Order(description);
+      Order newOrder = new Order(description, "d", 5, "a");
       List<Order> newList = new List<Order> { newOrder };
       string name = "Joe";
       Vendor newVendor = new Vendor(name);
